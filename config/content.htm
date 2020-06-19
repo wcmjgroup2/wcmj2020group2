@@ -44,8 +44,32 @@
 <p>inter-net(網際,inter+network)==inter-national<br/>protocol(協定)<br/>tcp/ip == transmision control protocol / internet protocol<br/>IPv4 version(版本) 4 IP 4個區段，用「.」隔開<br/>IPv6 version 6 IP 8個區段，用「:」隔開<br/>中華電信 dns server 2001:b000:168::1<br/>dns == domain name server 符號名稱伺服器</p>
 <h2>W7-W9</h2>
 <p><span>下載可攜程式系統利用  git 指令建立 cmsimde 網站<br/></span></p>
+<p><span>使用亂數分組將班上分為4組，並決定各組組長，交代下周上課事宜(線上上課)</span></p>
 <p>重新下載<span> </span><a href="https://drive.google.com/open?id=1xDTDfcHU18ipqZNbOufMkSZqibqNeL2T">wcmj2020_tool.7z</a>, 檔案大小為 435 MB, 解開壓縮後為 1.8 GB (其中包括 Mypaint, Dia 與 OBS 等).學會利用 ShareX 與 OBS 拍攝螢幕操作影片, 並將個人維護倉儲與網站的過程影片放入個人網站中.</p>
-<p></p>
+<p>期中考:第九週實習</p>
+<h2>W10-W14</h2>
+<p>以SSH維護倉儲<br/>由於在電腦教室時採用純 IPv6 協定上網, 因此為了能夠在近端將倉儲改版資料推送到目前只接受 IPv4 協定連線的 github, 以下除了將原本以 https 對 github 連線, 改為以 ssh 協定連線外, 在 Windows 環境下必須利用 putty 與 plink, 設定 putty 格式的 .ppk 以及能夠同時支援 IPv4 與 IPv6 的代理主機.</p>
+<p>設定步驟如下:</p>
+<p>1. 下載 Putty 工具組</p>
+<p><span>從 </span><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" rel="nofollow">https://www.chiark.greenend.org.uk/~sgtatham/putty/</a><span><span> </span>下載一般版, 或從<span> </span></span><a href="http://jakub.kotrla.net/putty/" rel="nofollow">http://jakub.kotrla.net/putty/</a><span><span> </span>下載特殊的可攜版本.</span></p>
+<p><span>2. 利用 y:\portablegit\bin\sh.exe 進入 shell 命令環境後，</span></p>
+<div>
+<div class="syntaxhighlighter js" id="highlighter_886664"></div>
+</div>
+<p>在 /y/home/.ssh 目錄下建立 id_rsa 與 id_rsa.pub 等 private key 與 public key</p>
+<p>之後以 SciTE 開啟 id_rsa.pub 後, 將此 public key 的內容, 以新增添加到 Github.com 帳號下 personal settings -&gt; SSH and GPG keys 頁面下.</p>
+<p>3. 接下來要利用 puttygen.exe 將 id_rsa 轉為 Putty 可以解讀的 .ppk 格式, 並修改隨身系統的啟動批次檔案, 指定利用 putty 目錄下的 plink 執行 git 指令的網路代理設定.</p>
+<div>
+<div class="syntaxhighlighter js" id="highlighter_668453"></div>
+</div>
+<p>4. 利用 puttygen.exe 載入第二步驟所建立的 private key, 也就是 id_rsa.</p>
+<p>開啟 puttygen 之後, 以右下方的 load 載入 id_rsa, 成功載入後, 利用 save private key 按鈕, 將已經轉為 putty 格式的 .ppk 存檔. 此一 .ppk 檔案必須在設定 putty 中 github.com session 時, 在 Connection-&gt;SSH-&gt;Auth 項目下, 將轉檔後的 .ppk 指向 private key file for authentication 欄位. </p>
+<p>並在 Connection-&gt;Proxy 項目下, 指定 Proxy type: HTTP, 並將 IPv6 代理主機設為 ::53 或 ::42 埠號設為 3128.</p>
+<p>5. 之後確定 home 下的 .ssh 目錄中的 config 設定檔案為:</p>
+<p><span>6. 最後再將 wcmj2020 倉儲中 .git 目錄下的 config 檔案中的連線協定, 由 https 改為採 ssh 連線，之後就可以透過近端的 .ppk private key 與 Github.com 上的 public key 對應, 無需輸入帳號密碼就可以進行 git push.了。<br/></span></p>
+<h4><span>Pelican Blog 內容與 Google Blogger 同步<br/></span></h4>
+<p>利用 Windows 10 設定 -&gt; 選擇預設網頁瀏覽器, 使用 Google Chrome 作為預設瀏覽器.</p>
+<p>隨身程式系統必須安裝 <span>google-api-python-client 與 oauth2client</span><br/><br/>pip install google-api-python-client oauth2client<br/><br/>OAuth 2.0 client IDs 程式類別可以選擇 Desktop app<br/><br/>使用者完成 client_secrets.json 設定後, 必須將檔案存在倉儲目錄外部</p>
 <p></p>
 <p></p>
 <p></p>
