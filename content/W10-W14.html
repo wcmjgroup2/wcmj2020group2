@@ -145,7 +145,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='Develop.html'>Develop</a><li class='has-children'><a href='Group2.html'>Group2</a><ul class='dropdown'><li><a href='w1-w6.html'>w1-w6</a><li><a href='課堂補充.html'>課堂補充</a><li><a href='W7-W9.html'>W7-W9</a><li><a href='W10-W14.html'>W10-W14</a></li>
+                     <li><a href='About.html'>About</a><li><a href='Develop.html'>Develop</a><li class='has-children'><a href='Group2.html'>Group2</a><ul class='dropdown'><li><a href='w1-w6.html'>w1-w6</a><li><a href='課堂補充.html'>課堂補充</a><li><a href='W7-W9.html'>W7-W9</a><li><a href='W10-W14.html'>W10-W14</a><li><a href='W15-W18.html'>W15-W18</a></li>
                       </ul>
                 </nav>
               </div>
@@ -156,7 +156,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W7-W9 << <a href='W7-W9.html'>Previous</a> <br /><h1>W10-W14</h1>
+    <div id="tipue_search_content">W7-W9 << <a href='W7-W9.html'>Previous</a> <a href='W15-W18.html'>Next</a> >> W15-W18<br /><h1>W10-W14</h1>
 <p>以SSH維護倉儲<br/>由於在電腦教室時採用純 IPv6 協定上網, 因此為了能夠在近端將倉儲改版資料推送到目前只接受 IPv4 協定連線的 github, 以下除了將原本以 https 對 github 連線, 改為以 ssh 協定連線外, 在 Windows 環境下必須利用 putty 與 plink, 設定 putty 格式的 .ppk 以及能夠同時支援 IPv4 與 IPv6 的代理主機.</p>
 <p>設定步驟如下:</p>
 <p>1. 下載 Putty 工具組</p>
@@ -178,10 +178,16 @@ img.add_border {
 <p><span>6. 最後再將 wcmj2020 倉儲中 .git 目錄下的 config 檔案中的連線協定, 由 https 改為採 ssh 連線，之後就可以透過近端的 .ppk private key 與 Github.com 上的 public key 對應, 無需輸入帳號密碼就可以進行 git push.了。<br/></span></p>
 <h4><span>Pelican Blog 內容與 Google Blogger 同步<br/></span></h4>
 <p>利用 Windows 10 設定 -&gt; 選擇預設網頁瀏覽器, 使用 Google Chrome 作為預設瀏覽器.</p>
-<p>隨身程式系統必須安裝 <span>google-api-python-client 與 oauth2client</span><br/><br/>pip install google-api-python-client oauth2client<br/><br/>OAuth 2.0 client IDs 程式類別可以選擇 Desktop app<br/><br/>使用者完成 client_secrets.json 設定後, 必須將檔案存在倉儲目錄外部</p>
-<p></p>
-<p></p>
-<p></p><br />W7-W9 << <a href='W7-W9.html'>Previous</a> </div>
+<p><span>隨身程式系統必須安裝 </span><span>google-api-python-client 與 oauth2client</span><br/><br/><span>       &lt;pip install google-api-python-client oauth2client&gt;</span><br/><br/></p>
+<p><span>在leo editer 建立add_to_blogger 及edit_to_blogger 兩個按鈕</span></p>
+<p><span>將<a href="http://mde.tw/wcmj2020/content/W12-W13.html">網站</a>上的按鈕內容複製貼上到leo editer 的按鈕內容裡</span></p>
+<p><span>利用學生帳號登入<a href="https://console.developers.google.com/projectselector2/apis/credentials/consent?supportedpurview=project">google blogger api</a></span></p>
+<p>開啟blogger API服務</p>
+<p>建立一個Desktop client 類型的憑證</p>
+<p>並將其儲存成client_secrets.json<br/><br/><span>使用者完成 client_secrets.json 設定後, 必須將檔案存在倉儲目錄外部</span></p>
+<p><span>即可使用add_to_blogger按鈕將網誌新增至google blogger</span></p>
+<p>使用edit_to_blogger按鈕將更新後的網誌同步至google blogger</p>
+<br />W7-W9 << <a href='W7-W9.html'>Previous</a> <a href='W15-W18.html'>Next</a> >> W15-W18</div>
         
     <!-- footer -->
       <div class="container">
